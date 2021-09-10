@@ -27,16 +27,49 @@
         main {
           grid-template-columns: repeat(5, 1fr);
           grid-auto-flow: dense;
+          display: grid;
         }
 
         article:nth-child(even) {
+          margin-left: 5rem;
+          max-width: 300px;
+          align-self: center;
+          justify-self: start;
+          grid-column: span 2;
+        }
+        article:nth-child(4n + 1) {
+          grid-column: 1 / span 3;
+        }
+
+        article:nth-child(4n - 1) {
+          grid-column: 3 / span 3;
+        }
+
+        /* 
+        Kode med teskt som er højre stillet
+        main {
+          grid-template-columns: repeat(3, 1fr);
+          grid-auto-flow: dense;
+          display: grid;
+        }
+
+        article:nth-child(4n - 1) {
+          grid-column: 2 / span 2;
+        }
+
+        article:nth-child(4n + 1) {
+          grid-column: 1 / span 2;
+        }
+
+        article:nth-child(2n-2) {
           place-self: center end;
-          /* margin-left: 5rem; */
+          margin: 2rem 0rem 0rem 7rem;
         }
-        article:nth-child(4n-1) {
-          /* place-self: center end; */
-          grid-column: 2 / 3;
-        }
+
+        article:nth-child(2n-4) {
+          place-self: center start;
+          margin: 2rem 7rem 0rem 0rem;
+        } */
       }
     </style>
   </head>
